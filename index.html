@@ -5,5 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Editor</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="container row">
+        <div>
+          <div class="logo"></div>
+          <div class="title">Code Editor</div>
+        </div>
+
+        <div class="row">
+          <button
+            class="btn secondary"
+            id="saveButton"
+            title="Save 
+          Work Locally">
+            <span class="">Save</span>
+          </button>
+          <button class="btn secondary" id="loadButton" title="Load File">
+            <span class="">Load</span>
+            <input id="openFile" type="file" accept="application/json" hidden />
+          </button>
+        </div>
+      </div>
+    </header>
+  </body>
 </html>
