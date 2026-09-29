@@ -70,7 +70,30 @@
             id="webTabs"
             role="tablist"
             aria-label="web editors">
-            <button class="tab active" role="tab" aria-selected="true"></button>
+            <button
+              class="tab active"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+              data-pane="html">
+              HTML
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              data-pane="css">
+              CSS
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              aria-selected="false"
+              tabindex="-2"
+              data-pane="JavaScript">
+              JavaScript
+            </button>
           </div>
         </div>
       </section>
