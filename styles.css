@@ -231,3 +231,33 @@ iframe.preview {
   border-radius: 14px;
   background: white;
 }
+
+.out {
+  background-color: #0a0e1a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px;
+  min-height: 160px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.footer {
+  opacity: 0.7;
+  font-size: 12px;
+  text-align: center;
+  padding: 12px;
+}
+
+.kbd {
+  font-family: 'Cascadia Code', sans-serif;
+  background: #0e1324;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+
+label {
+  font-size: 13px;
+  color: var(--muted);
+}
