@@ -153,3 +153,13 @@ h3 {
 .btn.err {
   background: linear-gradient(180deg, #fb7185, #ef4444);
 }
+
+.select,
+select,
+.text {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--txt);
+  padding: 10px 12px;
+  border-radius: 12px;
+}
