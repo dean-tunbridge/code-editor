@@ -20,11 +20,11 @@
   --panel: #14182b;
   --muted: #8b93a7;
   --text: #e9ecf1;
-  --brand: #007acc;
+  --brand: #7dd3fc;
   --brand-2: #60a5fa;
   --ok: #22c55e;
-  --warning: #eab308;
-  --error: #ef4444;
+  --warn: #eab308;
+  --err: #ef4444;
   --radius: 18px;
   --gap: 14px;
 }
