@@ -207,5 +207,27 @@ textarea.text {
     rgba(125, 211, 252, 0.18),
     rgba(96, 165, 250, 0.18)
   );
-  color: #007acc !important;
+  color: #00ff00 !important;
+}
+
+.editor-wrap {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 280px;
+  background: #0b1020;
+}
+
+.editor {
+  inline-size: 100%;
+  block-size: 380px;
+}
+
+iframe.preview {
+  inline-size: 100%;
+  block-size: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: white;
 }
