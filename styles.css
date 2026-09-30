@@ -12,3 +12,12 @@
   --radius: 18px;
   --gap: 14px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
