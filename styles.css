@@ -149,7 +149,7 @@ h3 {
   padding: 10px 14px;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(96, 165, 250, 0.35);
+  box-shadow: 0 6px 14px rgba(96, 165, 250, 0.35);
 }
 
 .btn.secondary {
