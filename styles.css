@@ -250,7 +250,6 @@ iframe.preview {
 }
 
 .kbd {
-  font-family: 'Cascadia Code', sans-serif;
   background: #0e1324;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
