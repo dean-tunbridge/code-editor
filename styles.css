@@ -4,7 +4,7 @@
   --panel: #14182b;
   --muted: #8b93a7;
   --text: #e9ecf1;
-  --brand: #7dd3fc;
+  --brand: #007acc;
   --brand-2: #60a5fa;
   --ok: #22c55e;
   --warning: #eab308;
@@ -191,5 +191,5 @@ textarea.text {
     rgba(125, 211, 252, 0.18),
     rgba(96, 165, 250, 0.18)
   );
-  color: #00ff00 !important;
+  color: #007acc !important;
 }
