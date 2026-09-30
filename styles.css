@@ -5,6 +5,13 @@
     VS Code Light Blue	#1F9CF0	
     Signature Dark Background	#1E1E1E	
     Signature Light Background	#F3F3F3	
+
+    Variables / Plain Text: #9CDCFE (Light Blue)
+    Strings: #CE9178 (Salmon / Light Orange)
+    Keywords / Storage / Control flow: #C586C0 or #DA70D6 (Magenta / Orchid)
+    Functions: #DCDCAA (Light Yellow)
+    Numbers: #B5CEA8 (Light Green)
+
  */
 
 :root {
