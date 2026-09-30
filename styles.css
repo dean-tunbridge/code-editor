@@ -159,7 +159,37 @@ select,
 .text {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--txt);
+  color: var(--text);
   padding: 10px 12px;
   border-radius: 12px;
+}
+
+textarea.text {
+  width: 100%;
+  min-height: 120px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff !important;
+}
+
+.tab.active {
+  background: linear-gradient(
+    180deg,
+    rgba(125, 211, 252, 0.18),
+    rgba(96, 165, 250, 0.18)
+  );
+  color: #00ff00 !important;
 }
