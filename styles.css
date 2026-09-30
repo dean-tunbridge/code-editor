@@ -21,3 +21,13 @@ html,
 body {
   height: 100%;
 }
+
+body {
+  font-family: 'Cascadia Code', sans-serif;
+  background: linear-gradient(
+    180deg,
+    var(--body-background),
+    var(--main-background) 35%
+  );
+  color: var(--text);
+}
