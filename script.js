@@ -76,4 +76,4 @@ function makeEditor(id, mode) {
 
 const editor_html = makeEditor('editor_html', 'ace/theme/html')
 const editor_css = makeEditor('editor_css', 'ace/theme/css')
-const editor_js = makeEditor('editor_js', 'ace/theme/js')
+const editor_js = makeEditor('editor_js', 'ace/theme/javascript')
