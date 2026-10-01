@@ -146,28 +146,28 @@ function buildWebSrcdoc(withTests = false) {
 
   return `<!doctype html>
   
-  <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr">
   
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <style>${css}\n</style>
-  </head>
+        <style>${css}\n</style>
+      </head>
 
-  <body>
-    ${html}
+      <body>
+        ${html}
 
-  <script>
+      <script>
 
-    try{
-      ${js}
-      ${withTests && tests ? `\n/* tests */\n${tests}` : ''}
-    } catch (e){console.error(e)}<\/script>
+        try{
+           ${js}
+          ${withTests && tests ? `\n/* tests */\n${tests}` : ''}
+            } catch (e){console.error(e)}<\/script>
 
-  </body>
+      </body>
 
-</html>`
+    </html>`
 }
 
 function runWeb(withTests = false) {
