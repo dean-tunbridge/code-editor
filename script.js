@@ -118,3 +118,22 @@ function showPane(name) {
     }
   })
 }
+
+$('#web-tabs')?.addEventListener('click', (e) => {
+  const btn = e.target.closest('.tab')
+  if (!btn) {
+    return
+  }
+  showPane(btn.dataset.pane)
+})
+
+$('#webTabs')?.addEventListener('keydown', (e) => {
+  const idx = TAB_ORDER.indexOf(activePane())
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+    const delta = e.key === 'ArrowLeft' ? -1 : 1
+    showPane(TAB_ORDER[(idx + delta + TAB_ORDER.length) % TAB_ORDER.length])
+    e.preventDefault()
+  }
+})
+
+showPane('html')
