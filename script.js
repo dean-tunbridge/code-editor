@@ -70,4 +70,6 @@ function makeEditor(id, mode) {
       saveProject()
     },
   })
+
+  return editor
 }
