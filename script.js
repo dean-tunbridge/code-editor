@@ -77,3 +77,15 @@ function makeEditor(id, mode) {
 const editor_html = makeEditor('editor_html', 'ace/theme/html')
 const editor_css = makeEditor('editor_css', 'ace/theme/css')
 const editor_js = makeEditor('editor_js', 'ace/theme/javascript')
+
+const TAB_ORDER = ['html', 'css', 'js']
+
+const wraps = Object.fromEntries(
+  $$('#web-editors .editor-wrap').map((el) => [el.dataset.pane, el]),
+)
+
+const editors = {
+  html: editor_html,
+  css: editor_css,
+  js: editor_js,
+}
