@@ -21,7 +21,7 @@ const escapeHtml = (el) =>
   )
 
 function log(message, type = 'info') {
-  const color =
+  const colour =
     type === 'error'
       ? 'var(--err)'
       : type === 'warn'
@@ -29,4 +29,8 @@ function log(message, type = 'info') {
         : 'var(--brand)'
 
   const time = new Date().toLocaleTimeString()
+
+  const line = document.createElement('div')
+
+  line.innerHTML = `<span style="color: ${colour}>[${time}]</span> ${escapeHtml(message)}`
 }
