@@ -62,4 +62,12 @@ function makeEditor(id, mode) {
       runWeb(false)
     },
   })
+
+  editor.commands.addCommand({
+    name: 'save',
+    bindKey: { win: 'Ctrl-S', mac: 'Command-S' },
+    exec() {
+      runWeb(false)
+    },
+  })
 }
