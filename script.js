@@ -188,3 +188,15 @@ $('#open-preview')?.addEventListener('click', () => {
   w.document.write(src)
   w.document.close()
 })
+
+function projectJSON() {
+  return {
+    version: 1,
+    kind: 'web-only',
+    assignment: $('#assignment')?.value || '',
+    test: $('#testArea')?.value || '',
+    html: ed_html.getValue(),
+    css: ed_css.getValue(),
+    js: ed_js.getValue(),
+  }
+}
