@@ -89,3 +89,7 @@ const editors = {
   css: editor_css,
   js: editor_js,
 }
+
+function activePane() {
+  const tab = $('#web-tabs .tab.active')
+}
