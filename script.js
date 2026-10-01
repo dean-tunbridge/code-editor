@@ -185,7 +185,7 @@ $('#run-web')?.addEventListener('click', () => runWeb(false))
 
 $('#run-tests')?.addEventListener('click', () => runWeb(true))
 
-$('#openPreview')?.addEventListener('click', () => {
+$('#open-preview')?.addEventListener('click', () => {
   const src = buildWebSrcdoc(false)
 
   const w = window.open('about:blank')
