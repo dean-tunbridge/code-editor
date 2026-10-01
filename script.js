@@ -19,3 +19,14 @@ const escapeHtml = (el) =>
         '"': '&quot;',
       })[char],
   )
+
+function log(message, type = 'info') {
+  const color =
+    type === 'error'
+      ? 'var(--err)'
+      : type === 'warn'
+        ? 'var(--warn)'
+        : 'var(--brand)'
+
+  const time = new Date().toLocaleTimeString()
+}
