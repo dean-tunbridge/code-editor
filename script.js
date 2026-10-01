@@ -106,6 +106,6 @@ function showPane(name) {
   $$('#web-tabs .tab').forEach((tab) => {
     const on = tab.dataset.pane === name
     tab.classList.toggle('active', on)
-    tab.setAttribute()
+    tab.setAttribute('aria-selected')
   })
 }
