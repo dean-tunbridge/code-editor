@@ -109,4 +109,12 @@ function showPane(name) {
     tab.setAttribute('aria-selected', on)
     tab.tabIndex = on ? 0 : -1
   })
+
+  requestAnimationFrame(() => {
+    const editor = editors[name]
+    if (editor && editor.resize) {
+      editor.resize(true)
+      editor.focus()
+    }
+  })
 }
