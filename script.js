@@ -20,7 +20,7 @@ const escapeHtml = (el) =>
       })[char],
   )
 
-function log(message, type = 'info') {
+function log(msg, type = 'info') {
   const colour =
     type === 'error'
       ? 'var(--err)'
@@ -32,7 +32,7 @@ function log(message, type = 'info') {
 
   const line = document.createElement('div')
 
-  line.innerHTML = `<span style="color: ${colour}>[${time}]</span> ${escapeHtml(message)}`
+  line.innerHTML = `<span style="color: ${colour}>[${time}]</span> ${escapeHtml(msg)}`
 
   out.appendChild(line)
   out.scrollTop = out.scrollHeight
@@ -43,3 +43,23 @@ function clearOutput() {
 }
 
 $('#clearOutput')?.addEventListener('click', clearOut)
+
+function makeEditor(id, mode) {
+  const editor = ace.edit(id, {
+    theme: 'ace/theme/dracula',
+    mode,
+    tabSize: 2,
+    useSoftTabs: true,
+    showPrintMargin: false,
+    wrap: true,
+  })
+
+  editor.session.setUseWrapMode(true)
+  editor.commands({
+    name: 'run',
+    bindKey: { win: 'Ctrl-Enter', mac: 'Command-Enter' },
+    exec() {
+      runWeb(false)
+    },
+  })
+}
