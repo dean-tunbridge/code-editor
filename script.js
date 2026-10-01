@@ -92,4 +92,6 @@ const editors = {
 
 function activePane() {
   const tab = $('#web-tabs .tab.active')
+
+  return tab ? tab.dataset.pane : 'html'
 }
