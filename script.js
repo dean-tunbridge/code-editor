@@ -142,7 +142,7 @@ function buildWebSrcdoc(withTests = false) {
   const html = ed_html.getValue()
   const css = ed_css.getValue()
   const js = ed_js.getValue()
-  const tests = ($('#testArea')?.value || '').trim()
+  const tests = ($('#test-area')?.value || '').trim()
 
   return `<!doctype html>
   
