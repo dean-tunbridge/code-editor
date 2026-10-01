@@ -194,7 +194,7 @@ function projectJSON() {
     version: 1,
     kind: 'web-only',
     assignment: $('#assignment')?.value || '',
-    test: $('#testArea')?.value || '',
+    test: $('#test-area')?.value || '',
     html: ed_html.getValue(),
     css: ed_css.getValue(),
     js: ed_js.getValue(),
