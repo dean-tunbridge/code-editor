@@ -67,7 +67,7 @@ function makeEditor(id, mode) {
     name: 'save',
     bindKey: { win: 'Ctrl-S', mac: 'Command-S' },
     exec() {
-      runWeb(false)
+      saveProject()
     },
   })
 }
