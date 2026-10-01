@@ -42,7 +42,7 @@ function clearOutput() {
   out.innerHTML = ''
 }
 
-$('#clearOutput')?.addEventListener('click', clearOut)
+$('#clear-output')?.addEventListener('click', clearOutput)
 
 function makeEditor(id, mode) {
   const editor = ace.edit(id, {
