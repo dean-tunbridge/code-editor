@@ -33,4 +33,13 @@ function log(message, type = 'info') {
   const line = document.createElement('div')
 
   line.innerHTML = `<span style="color: ${colour}>[${time}]</span> ${escapeHtml(message)}`
+
+  out.appendChild(line)
+  out.scrollTop = out.scrollHeight
 }
+
+function clearOutput() {
+  out.innerHTML = ''
+}
+
+$('#clearOutput')?.addEventListener('click', clearOut)
