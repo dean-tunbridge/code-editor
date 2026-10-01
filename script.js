@@ -128,12 +128,69 @@ $('#web-tabs')?.addEventListener('click', (e) => {
 })
 
 $('#webTabs')?.addEventListener('keydown', (e) => {
-  const idx = TAB_ORDER.indexOf(activePane())
+  const index = TAB_ORDER.indexOf(activePane())
   if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
     const delta = e.key === 'ArrowLeft' ? -1 : 1
-    showPane(TAB_ORDER[(idx + delta + TAB_ORDER.length) % TAB_ORDER.length])
+    showPane(TAB_ORDER[(index + delta + TAB_ORDER.length) % TAB_ORDER.length])
     e.preventDefault()
   }
 })
 
 showPane('html')
+
+function buildWebSrcdoc(withTests = false) {
+  const html = ed_html.getValue()
+  const css = ed_css.getValue()
+  const js = ed_js.getValue()
+  const tests = ($('#testArea')?.value || '').trim()
+
+  return `<!doctype html>
+  
+  <html lang="en" dir="ltr">
+  
+
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<style>${css}\n</style></head>
+
+<body>${html}
+
+<script>
+
+try{
+
+${js}
+
+${withTests && tests ? `\n/* tests */\n${tests}` : ''}
+
+}catch(e){console.error(e)}<\/script>
+
+</body>
+
+</html>`
+}
+
+function runWeb(withTests = false) {
+  preview.srcdoc = buildWebSrcdoc(withTests)
+  log(withTests ? 'Run with tests.' : 'Web preview updated.')
+}
+
+$('#run-web')?.addEventListener('click', () => runWeb(false))
+
+$('#run-tests')?.addEventListener('click', () => runWeb(true))
+
+$('#openPreview')?.addEventListener('click', () => {
+  const src = buildWebSrcdoc(false)
+
+  const w = window.open('about:blank')
+
+  w.document.open()
+  w.document.write(src)
+  w.document.close()
+})
