@@ -95,3 +95,17 @@ function activePane() {
 
   return tab ? tab.dataset.pane : 'html'
 }
+
+function showPane(name) {
+  TAB_ORDER.forEach((key) => {
+    if (wraps[key]) {
+      wraps[key].hidden = key !== name
+    }
+  })
+
+  $$('#web-tabs .tab').forEach((tab) => {
+    const on = tab.dataset.pane === name
+    tab.classList.toggle('active', on)
+    tab.setAttribute()
+  })
+}
