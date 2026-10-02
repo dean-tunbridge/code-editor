@@ -216,9 +216,24 @@ function loadProject(obj) {
 }
 
 function setDefaultContent() {
-  editor_html.setValue(`<!-- HTML content goes here -->`)
+  editor_html.setValue(`<!-- HTML content goes here -->`, -1)
 
-  editor_css.setValue(`// CSS content goes here // `)
+  editor_css.setValue(`// CSS content goes here // `, -1)
 
-  editor_js.setValue(`// JavaScript content goes here // `)
+  editor_js.setValue(`// JavaScript content goes here // `, -1)
+}
+
+function saveProject() {
+  try {
+    const data = JSON.stringify(projectJSON(), null, 2)
+    localStorage.setItem(STORAGE_KEY, data)
+    const blob = new Blob([data], { type: 'application/json' })
+    const a = document.createElement('a')
+    a.href = URL.createObjectURL(blob)
+    a.download = 'academy-web.json'
+    a.click()
+    log('Saved locally and downloaded JSON file.')
+  } catch (e) {
+    log('Unable to save: ' + e, 'error')
+  }
 }
