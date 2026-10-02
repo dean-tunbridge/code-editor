@@ -205,8 +205,8 @@ function loadProject(obj) {
   try {
     if ($('#assignment')) $('#assignment').value = obj.assignment || ''
     if ($('#test-area')) $('#test-area').value = obj.test || ''
-    editor_html.setValue(obj.html) || ''
-    editor_css.setValue(obj.css) || ''
-    editor_js.setValue(obj.js) || ''
+    editor_html.setValue(obj.html || '', -1)
+    editor_css.setValue(obj.css || '', -1)
+    editor_js.setValue(obj.js || '', -1)
   } catch (err) {}
 }
