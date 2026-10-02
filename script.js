@@ -77,9 +77,9 @@ function makeEditor(id, mode) {
   return editor
 }
 
-const editor_html = makeEditor('editor_html', 'ace/theme/html')
-const editor_css = makeEditor('editor_css', 'ace/theme/css')
-const editor_js = makeEditor('editor_js', 'ace/theme/javascript')
+const editor_html = makeEditor('editor_html', 'ace/mode/html')
+const editor_css = makeEditor('editor_css', 'ace/mode/css')
+const editor_js = makeEditor('editor_js', 'ace/mode/javascript')
 
 const TAB_ORDER = ['html', 'css', 'js']
 
