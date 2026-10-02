@@ -5,6 +5,7 @@ const out = $('#output')
 const preview = $('#preview')
 const STORAGE_KEY = 'local-storage'
 
+// SPECIAL CHARS //
 const escapeHtml = (el) =>
   String(el).replace(
     /[&<>"]/g,
@@ -20,6 +21,7 @@ const escapeHtml = (el) =>
       })[char],
   )
 
+// OUTPUT LOG //
 function log(msg, type = 'info') {
   const colour =
     type === 'error'
@@ -44,6 +46,7 @@ function clearOutput() {
 
 $('#clear-output')?.addEventListener('click', clearOutput)
 
+// EDITOR //
 function makeEditor(id, mode) {
   const editor = ace.edit(id, {
     theme: 'ace/theme/dracula',
@@ -119,6 +122,7 @@ function showPane(name) {
   })
 }
 
+// EVENT LISTENERS (TABS)
 $('#web-tabs')?.addEventListener('click', (e) => {
   const btn = e.target.closest('.tab')
   if (!btn) {
@@ -201,6 +205,7 @@ function projectJSON() {
   }
 }
 
+// LOAD PROJECT //
 function loadProject(obj) {
   try {
     if ($('#assignment')) $('#assignment').value = obj.assignment || ''
@@ -215,6 +220,7 @@ function loadProject(obj) {
   }
 }
 
+// SET DEFAULT //
 function setDefaultContent() {
   editor_html.setValue(`<!-- HTML content goes here -->`, -1)
 
@@ -223,6 +229,7 @@ function setDefaultContent() {
   editor_js.setValue(`// JavaScript content goes here // `, -1)
 }
 
+// SAVE //
 function saveProject() {
   try {
     const data = JSON.stringify(projectJSON(), null, 2)
@@ -238,6 +245,7 @@ function saveProject() {
   }
 }
 
+// EVENT LISTENERS //
 $('#save-button')?.addEventListener('click', saveProject)
 $('#load-button')?.addEventListener('click', () => $('#open-file').click())
 $('#open-file')?.addEventListener('change', async (e) => {
