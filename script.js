@@ -250,3 +250,17 @@ $('#open-file')?.addEventListener('change', async (e) => {
     log('Invalid project file', 'error')
   }
 })
+
+// INIT LOAD //
+try {
+  const cache = localStorage.getItem(STORAGE_KEY)
+  if (cache) {
+    loadProject(JSON.parse(cache))
+  } else {
+    setDefaultContent()
+  }
+} catch {
+  setDefaultContent()
+}
+
+log('Ready — Code Editor (HTML/CSS/JS)')
