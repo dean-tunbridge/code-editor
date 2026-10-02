@@ -228,12 +228,12 @@ function saveProject() {
     const data = JSON.stringify(projectJSON(), null, 2)
     localStorage.setItem(STORAGE_KEY, data)
     const blob = new Blob([data], { type: 'application/json' })
-    const a = document.createElement('a')
-    a.href = URL.createObjectURL(blob)
-    a.download = 'academy-web.json'
-    a.click()
+    const anchor = document.createElement('a')
+    anchor.href = URL.createObjectURL(blob)
+    anchor.download = 'local-save.json'
+    anchor.click()
     log('Saved locally and downloaded JSON file.')
-  } catch (e) {
-    log('Unable to save: ' + e, 'error')
+  } catch (err) {
+    log('Unable to save: ' + err, 'error')
   }
 }
