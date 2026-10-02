@@ -237,3 +237,16 @@ function saveProject() {
     log('Unable to save: ' + err, 'error')
   }
 }
+
+$('#save-button')?.addEventListener('click', saveProject)
+$('#load-button')?.addEventListener('click', () => $('#open-file').click())
+$('#open-file')?.addEventListener('change', async (e) => {
+  const file = e.target.files?.[0]
+  if (!file) return
+  try {
+    const obj = JSON.parse(await file.text())
+    loadProject(obj)
+  } catch (err) {
+    log('Invalid project file', 'error')
+  }
+})
