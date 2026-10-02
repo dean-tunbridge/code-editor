@@ -58,7 +58,7 @@ function makeEditor(id, mode) {
   })
 
   editor.session.setUseWrapMode(true)
-  editor.commands({
+  editor.commands.addCommand({
     name: 'run',
     bindKey: { win: 'Ctrl-Enter', mac: 'Command-Enter' },
     exec() {
@@ -143,9 +143,9 @@ $('#webTabs')?.addEventListener('keydown', (e) => {
 showPane('html')
 
 function buildWebSrcdoc(withTests = false) {
-  const html = ed_html.getValue()
-  const css = ed_css.getValue()
-  const js = ed_js.getValue()
+  const html = editor_html.getValue()
+  const css = editor_css.getValue()
+  const js = editor_js.getValue()
   const tests = ($('#test-area')?.value || '').trim()
 
   return `<!doctype html>
