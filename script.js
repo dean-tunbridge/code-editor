@@ -200,3 +200,13 @@ function projectJSON() {
     js: ed_js.getValue(),
   }
 }
+
+function loadProject(obj) {
+  try {
+    if ($('#assignment')) $('#assignment').value = obj.assignment || ''
+    if ($('#test-area')) $('#test-area').value = obj.test || ''
+    editor_html.setValue(obj.html) || ''
+    editor_css.setValue(obj.css) || ''
+    editor_js.setValue(obj.js) || ''
+  } catch (err) {}
+}
