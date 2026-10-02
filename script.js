@@ -34,8 +34,7 @@ function log(msg, type = 'info') {
 
   const line = document.createElement('div')
 
-  line.innerHTML = `<span style="color: ${colour}>[${time}]</span> ${escapeHtml(msg)}`
-
+  line.innerHTML = `<span style="color: ${colour}">[${time}]</span> ${escapeHtml(msg)}`
   out.appendChild(line)
   out.scrollTop = out.scrollHeight
 }
@@ -199,9 +198,9 @@ function projectJSON() {
     kind: 'web-only',
     assignment: $('#assignment')?.value || '',
     test: $('#test-area')?.value || '',
-    html: ed_html.getValue(),
-    css: ed_css.getValue(),
-    js: ed_js.getValue(),
+    html: editor_html.getValue(),
+    css: editor_css.getValue(),
+    js: editor_js.getValue(),
   }
 }
 
