@@ -208,5 +208,34 @@ function loadProject(obj) {
     editor_html.setValue(obj.html || '', -1)
     editor_css.setValue(obj.css || '', -1)
     editor_js.setValue(obj.js || '', -1)
-  } catch (err) {}
+
+    log('Web Project loaded')
+  } catch (err) {
+    log(`unable to load Project due to ${err} error`)
+  }
+}
+
+function setDefaultContent() {
+  editor_html.setValue(
+    `<!-- Welcome card -->
+      <section class="card" style="max-width:520px;margin:24px auto;padding:18px;text-align:center">
+        <h1>Welcome to the Academy</h1>
+        <p>This example runs locally in the browser.</p>
+        <button id="btn">Try me</button>
+      </section>`,
+    -1,
+  )
+
+  editor_css.setValue(
+    `body{font-family:system-ui;background:#f7fafc;margin:0}
+     h1{color:#0f172a}
+     #btn{padding:.75rem 1rem;border:0;border-radius:10px;background:#60a5fa;color:#08111f;font-weight:700}`,
+    -1,
+  )
+
+  editor_js.setValue(
+    `document.getElementById('btn').addEventListener('click',()=>alert('Well done!'));
+    console.log('Hello from JavaScript!');`,
+    -1,
+  )
 }
