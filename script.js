@@ -130,7 +130,7 @@ $('#web-tabs')?.addEventListener('click', (e) => {
   showPane(btn.dataset.pane)
 })
 
-$('#webTabs')?.addEventListener('keydown', (e) => {
+$('#web-tabs')?.addEventListener('keydown', (e) => {
   const index = TAB_ORDER.indexOf(activePane())
   if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
     const delta = e.key === 'ArrowLeft' ? -1 : 1
@@ -215,17 +215,60 @@ function loadProject(obj) {
 
     log('Web Project loaded')
   } catch (err) {
-    log(`unable to load Project due to ${err} error`)
+    log(`Unable to load project: ${err}`, 'error')
   }
 }
 
 // SET DEFAULT //
 function setDefaultContent() {
-  editor_html.setValue(`<!-- HTML content goes here -->`, -1)
+  editor_html.setValue(
+    `<!-- Welcome card -->
+<section
+  class="card"
+  style="
+    max-width: 520px;
+    margin: 24px auto;
+    padding: 18px;
+    text-align: center;
+  "
+>
+  <h1>Hello World</h1>
+  <p>This example runs locally in the browser.</p>
+  <button id="btn">Try me</button>
+</section>`,
+    -1,
+  )
 
-  editor_css.setValue(`// CSS content goes here // `, -1)
+  editor_css.setValue(
+    `body {
+  font-family: system-ui;
+  background: #f7fafc;
+  margin: 0;
+}
 
-  editor_js.setValue(`// JavaScript content goes here // `, -1)
+h1 {
+  color: #0f172a;
+}
+
+#btn {
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  background: #60a5fa;
+  color: #08111f;
+  font-weight: 700;
+}`,
+    -1,
+  )
+
+  editor_js.setValue(
+    `document.getElementById('btn').addEventListener('click', () => {
+  alert('Well done!');
+});
+
+console.log('Hello from JavaScript!');`,
+    -1,
+  )
 }
 
 // SAVE //

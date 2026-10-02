@@ -6,6 +6,7 @@
     <title>Code Editor</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,16 +27,13 @@
             id="save-button"
             title="Save 
           Work Locally">
-            <span class="">Save</span>
+            <span>Save</span>
           </button>
           <button class="btn secondary" id="load-button" title="Load File">
-            <span class="">Load</span>
-            <input
-              id="open-file"
-              type="file"
-              accept="application/json"
-              hidden />
+            <span>Load</span>
           </button>
+
+          <input id="open-file" type="file" accept="application/json" hidden />
         </div>
       </div>
     </header>
