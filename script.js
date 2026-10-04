@@ -5,6 +5,33 @@ const out = $('#output')
 const preview = $('#preview')
 const STORAGE_KEY = 'local-storage'
 
+// LESSON DATA //
+let lessonData
+
+async function loadLessons() {
+  const response = await fetch('data.json')
+  lessonData = await response.json()
+  console.log(lessonData)
+}
+
+loadLessons()
+
+// RENDER LESSONS //
+function renderLessonList() {
+  const container = $('#lesson-list')
+
+  // clear existing content
+
+  // loop through lessonData.categories
+
+  // create a category heading for each category
+
+  // create a container for its lessons
+}
+
+// BUTTON //
+const button = document.createElement('button')
+
 // SPECIAL CHARS //
 const escapeHtml = (el) =>
   String(el).replace(
