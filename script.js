@@ -19,14 +19,6 @@ loadLessons()
 // RENDER LESSONS //
 function renderLessonList() {
   const container = $('#lesson-list')
-
-  // clear existing content
-
-  // loop through lessonData.categories
-
-  // create a category heading for each category
-
-  // create a container for its lessons
 }
 
 // BUTTON //
