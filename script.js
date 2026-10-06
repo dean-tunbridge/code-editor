@@ -16,14 +16,6 @@ async function loadLessons() {
 
 loadLessons()
 
-// RENDER LESSONS //
-function renderLessonList() {
-  const container = $('#lesson-list')
-}
-
-// BUTTON //
-const button = document.createElement('button')
-
 // SPECIAL CHARS //
 const escapeHtml = (el) =>
   String(el).replace(
