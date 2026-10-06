@@ -9,8 +9,8 @@ const STORAGE_KEY = 'local-storage'
 let lessonData
 
 async function loadLessons() {
-  const response = await fetch('data.json')
-  lessonData = await response.json()
+  const res = await fetch('data.json')
+  lessonData = await res.json()
   console.log(lessonData)
 }
 
